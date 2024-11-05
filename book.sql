@@ -1,0 +1,4 @@
+CREATE TABLE EmailList (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email_address VARCHAR(255) NOT NULL
+);

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fc466b, #3f5efb);
+        }
+        form {
+            background-color: #fff;
+            padding: 30px 40px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        form h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-top: 15px;
+            text-align: left;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #3f5efb;
+            outline: none;
+            box-shadow: 0 0 8px rgba(63, 94, 251, 0.2);
+        }
+        .message {
+            font-size: 12px;
+            margin-top: 5px;
+            height: 16px;
+        }
+        .message.valid {
+            color: green;
+        }
+        .message.invalid {
+            color: red;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        }
+        .links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .links a {
+            color: #3f5efb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .links a:hover {
+            color: #fc466b;
+        }
+    </style>
+</head>
+<body>
+    <form id="myform" action="home.html">
+        <h2>Create Account</h2>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" onkeyup="validateEmail()" required>
+        <div class="message" id="emailMessage"></div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" onkeyup="validatePassword()" required>
+        <div class="message" id="passwordMessage"></div>
+
+        <div class="links">
+            <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+
+        <input type="submit" value="Sign Up">
+
+        <div class="links">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
+    </form>
+
+    <script>
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            const emailInput = document.getElementById("email");
+            const emailMessage = document.getElementById("emailMessage");
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (emailPattern.test(email)) {
+                emailInput.style.borderColor = "green";
+                emailMessage.textContent = "Valid email";
+                emailMessage.classList.add("valid");
+                emailMessage.classList.remove("invalid");
+            } else {
+                emailInput.style.borderColor = "red";
+                emailMessage.textContent = "Enter a valid email address";
+                emailMessage.classList.add("invalid");
+                emailMessage.classList.remove("valid");
+            }
+        }
+
+        function validatePassword() {
+            const password = document.getElementById("password").value;
+            const passwordInput = document.getElementById("password");
+            const passwordMessage = document.getElementById("passwordMessage");
+            if (password.length >= 6) {
+                passwordInput.style.borderColor = "green";
+                passwordMessage.textContent = "Password looks good";
+                passwordMessage.classList.add("valid");
+                passwordMessage.classList.remove("invalid");
+            } else {
+                passwordInput.style.borderColor = "red";
+                passwordMessage.textContent = "Password must be at least 6 characters";
+                passwordMessage.classList.add("invalid");
+                passwordMessage.classList.remove("valid");
+            }
+        }
+    </script>
+</body>
+</html>

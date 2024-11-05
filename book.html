@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-run Script Based on Price</title>
+    <style>
+   .h1{
+    
+     background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    
+    
+   }
+   #img1{
+  
+    height: 300px;
+    width: 500px;
+    
+    
+   }
+   div{
+    background-color: aquamarine;
+   }
+   
+   
+   
+.button1 {
+    background-color: #d07c16; 
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.button1:hover {
+    background-color: #ff4500; /* Darker shade */
+    transform: scale(1.1); /* Slightly bigger */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Bigger shadow */
+}
+
+.button1:active {
+    background-color: #e04335;
+    transform: scale(0.95);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* Slightly reduced shadow */
+}
+
+
+
+ 
+ 
+    </style>
+</head>
+<body>
+    <label for="priceInput">Enter Price (in Rupees):</label>
+    <input type="number" id="priceInput" placeholder="Enter price here">
+
+    <p id="para">This paragraph will contain images with captions: </p>
+
+    <script>
+       
+        document.getElementById('priceInput').addEventListener('input', checkPriceAndAddImages);
+
+        function checkPriceAndAddImages() {
+           
+            const price = parseInt(document.getElementById('priceInput').value);
+
+         
+            if (price > 10000) {
+                addImagesWithCaptions();
+            } else {
+                
+                addimg();
+            }
+        }
+
+        function addImagesWithCaptions() {
+            
+            const paragraph = document.getElementById('para');
+            paragraph.innerHTML = 'This paragraph will contain images with captions: '; // Reset the text
+
+          
+            const images = [
+                { src: 'peace.webp', caption: 'Caption for Image 1' },
+                { src: 'https://example.com/image2.jpg', caption: 'Caption for Image 2' },
+                { src: 'https://example.com/image3.jpg', caption: 'Caption for Image 3' }
+            ];
+
+            
+            images.forEach(imageData => {
+               
+                const figure = document.createElement('figure');
+
+             
+                const img = document.createElement('img');
+                img.src = imageData.src;
+                img.alt = imageData.caption;
+                img.width = 200; 
+                const caption = document.createElement('figcaption');
+                caption.textContent = imageData.caption;
+
+              
+                figure.appendChild(img);
+                figure.appendChild(caption);
+
+               
+                paragraph.appendChild(figure);
+                
+            });
+        }
+        function addimg(){
+                    
+            const paragraph = document.getElementById('para');
+            paragraph.innerHTML = 'This paragraph will contain images with captions: '; // Reset the text
+
+         
+            const images = [
+                { src: 'kerla.webp', caption: 'Caption for Image 1' },
+                { src: 'https://example.com/image2.jpg', caption: 'Caption for Image 2' },
+                { src: 'https://example.com/image3.jpg', caption: 'Caption for Image 3' }
+            ];
+
+          
+            images.forEach(imageData => {
+               
+                const figure = document.createElement('figure');
+
+              
+                const img = document.createElement('img');
+                img.src = imageData.src;
+                img.alt = imageData.caption;
+                img.width = 200; 
+                const caption = document.createElement('figcaption');
+                caption.textContent = imageData.caption;
+
+                
+                figure.appendChild(img);
+                figure.appendChild(caption);
+
+              
+                paragraph.appendChild(figure);
+        })
+    }
+    
+    </script>
+
+<div class="h1">
+<h1 style="color: rgb(86, 86, 94);padding-top: 80px;">most loved......</h1><br>
+    <div style=" overflow-x: scroll;display: flex; ">
+    
+       <img id="img1" src="b22.jpg">
+       <img id="img1" src="b1.jpg">
+       <img id="img1" src="k1.jpg">
+       <img id="img1" src="h1.jpg">
+      
+    </div>
+    <button type="button" name="submit"  value="₹ 8999"  class="button1">₹ 8999</button>
+    <h1 style="color: rgb(79, 79, 82);padding-top: 80px;">ROOMS TYPE 1</h1>
+    <div style=" overflow-x: scroll;display: flex; ">
+       
+       <img id="img1" src="r2.jpg">
+
+       <img id="img1" src="b33.avif">
+
+       <img id="img1" src="k2.jpg">
+
+       <img id="img1" src="h2.jpg">
+
+       
+    </div><button type="button" name="submit"  value="₹ 9999"  class="button1">₹ 9999</button>
+    <h1 style="color: rgb(79, 79, 82);padding-top: 80px;">ROOMS TYPE 2</h1>
+    <div style=" overflow-x: scroll;display: flex; ">
+       
+        <img id="img1" src="r3.jpg">
+ 
+        <img id="img1" src="b3.jpg">
+ 
+        <img id="img1" src="k3.jpg">
+ 
+        <img id="img1" src="h3.jpg">
+ 
+        
+     </div><button type="button" name="submit"  value="₹ 9999"  class="button1">₹ 9999</button>
+     <h1 style="color: rgb(79, 79, 82);padding-top: 80px;">ROOMS TYPE 3......</h1>
+     <div style=" overflow-x: scroll;display: flex;">
+        <img id="img1" src="r4.jpg">
+ 
+        <img id="img1" src="b4.jpg">
+ 
+        <img id="img1" src="k4.jpg">
+ 
+        <img id="img1" src="h4.jpg">
+ 
+     </div> ><button type="button" name="submit"  value="₹ 11999"  class="button1">₹ 11999</button>
+     <h1 style="color: rgb(79, 79, 82);padding-top: 80px;">ROOMS TYPE 4......</h1>
+     <div style=" overflow-x: scroll;display: flex">
+        <img id="img1" src="r5.jpg">
+ 
+        <img id="img1" src="b555.jpg">
+ 
+        <img id="img1" src="k5.jpg">
+ 
+        <img id="img1" src="h5.jpg">
+ 
+        
+     </div><button type="button" name="submit"  value="12999"  class="button1">₹12999</button>
+     <h1 style="color: rgb(79, 79, 82); padding-top: 80px;">ROOMS TYPE 5......</h1><br>
+     <div style=" overflow-x: scroll;display: flex;">
+        <img id="img1" src="r6.jpg">
+ 
+        <img id="img1" src="b6.jpg">
+ 
+        <img id="img1" src="k6.jpg">
+ 
+        <img id="img1" src="h6.jpg">
+ 
+       
+     </div><button type="button" name="submit"  value="₹ 9999"  class="button1">₹ 9999..
+
+</body>
+</html>
